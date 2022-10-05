@@ -1,0 +1,29 @@
+.list {
+    margin: 20px auto 0px;
+    position: relative;
+}
+
+.chart-con {
+    position: absolute;
+    top: -160px;
+    left: 250px;
+    min-width: 240px;
+    min-height: 150px;
+    max-width: 240px;
+    max-height: 150px;
+    border-radius: 20px;
+    background-color: #ddd;
+}
+
+.chart-con:before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 133px;
+    width: 0;
+    height: 0;
+    transform: rotate(58deg);
+    border-top: 20px solid transparent;
+    border-right: 10px solid #ddd;
+    border-bottom: 21px solid transparent;
+}
