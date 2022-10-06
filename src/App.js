@@ -1,41 +1,38 @@
 import {useEffect, useState} from 'react'
-
+import {query } from './getData'
 
 import axios from 'axios';
 import Chart from './componant/chart';
 import './App.css'
 function App() {
-  const [data,setData] = useState({})
+  const [tokenData,setTokenData] = useState([])
   useEffect(()=>{
-    var data = JSON.stringify({
-      "query": "query MyQuery {\n  ethereum(network: bsc) {\n    transactions(options: {asc: \"block.timestamp.time\"}) {\n      amount(date: {since: null, till: null})\n      sender(txSender: {in: \"0xF6dDc8aCAFdA5BB95271CB73CFDe3AB7f67d3c99\"}) {\n        address\n      }\n      gasValue\n      hash\n      currency {\n        symbol\n        address\n        name\n      }\n      index\n      to {\n        address\n        smartContract {\n          contractType\n          currency {\n            name\n            tokenType\n            symbol\n          }\n        }\n      }\n      block {\n        height\n        timestamp {\n          time\n        }\n      }\n    }\n  }\n}\n",
-      "variables": "{}"
-   });
-   
-   var config = { 
+   var config = {
       method: 'post',
       url: 'https://graphql.bitquery.io',
       headers: { 
          'Content-Type': 'application/json', 
          'X-API-KEY': 'BQYh5IhPL57WRiNvTavzEpHM3RKhX6VZ'
       },
-      data : data
+      data : {query}
    };
    
    axios(config)
-   .then( (response)=>{
-      let arr =response.data.data['ethereum']['transactions']
-      const labels = [];
-      const dataSet =[];
-      const title = `${arr[0].currency['name']}/${arr[0].currency.symbol}`;
-      const address = arr[0].sender.address;
-      if(arr.lingth !==0){
-          arr.slice(arr.length-25).map((item)=>{
-              labels.push(new Date(item.block.timestamp.time).getHours());
-              dataSet.push(item.amount)
-          })
-      }
-      setData({labels,dataSet,title,address})
+   .then(function (response) {
+    const token = []
+    const result = response.data.data.ethereum.dexTrades
+    result.map((item)=>{
+    if(token.indexOf(item.buyCurrency.symbol)===-1){
+      token.push(item.buyCurrency.symbol)
+    }
+    })
+    let lastResult = token.map(item=>{
+      return result.filter((tokenItem)=>{
+        return tokenItem.buyCurrency.symbol === item
+      })
+    })
+    console.log(!!(lastResult))
+    setTokenData(lastResult)
    })
    .catch(function (error) {
       console.log(error);
@@ -48,8 +45,7 @@ function App() {
           <h2 className='tilte-name'>name/symdol</h2>
           <h2 className='tilte-address'>Address</h2>
         </div>
-        <Chart data={data}/>
-        
+        {(tokenData)?tokenData.map(item=>{return (<Chart data={item}/>)}):null}
       </div>
     </div>
   );
