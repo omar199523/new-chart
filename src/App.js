@@ -19,20 +19,15 @@ function App() {
    
    axios(config)
    .then(function (response) {
-    const token = []
-    const result = response.data.data.ethereum.dexTrades
-    result.map((item)=>{
-    if(token.indexOf(item.buyCurrency.symbol)===-1){
-      token.push(item.buyCurrency.symbol)
-    }
-    })
-    let lastResult = token.map(item=>{
-      return result.filter((tokenItem)=>{
-        return tokenItem.buyCurrency.symbol === item
+    const dexTrades = response.data.data.ethereum.dexTrades
+    let labels = [],
+        dataSet = [];
+    dexTrades.forEach((filItem)=>{
+      labels.push(new Date(filItem.timeInterval.minute).getMinutes());
+      dataSet.push(filItem.quoteAmount) 
       })
-    })
-    console.log(!!(lastResult))
-    setTokenData(lastResult)
+
+    setTokenData({labels,dataSet,title:dexTrades[0].baseCurrency.name})
    })
    .catch(function (error) {
       console.log(error);
@@ -45,7 +40,7 @@ function App() {
           <h2 className='tilte-name'>name/symdol</h2>
           <h2 className='tilte-address'>Address</h2>
         </div>
-        {(tokenData)?tokenData.map(item=>{return (<Chart data={item}/>)}):null}
+        <Chart data={tokenData}/> 
       </div>
     </div>
   );
