@@ -4,13 +4,13 @@ import React from 'react'
 import 'chart.js/auto';
 import { Chart } from 'react-chartjs-2';
 
-  const GraduationYearChart =({labels,dataSet})=>{
+  const GraduationYearChart =({labels,dataSet,title})=>{
     const data={
         labels,
         datasets: [
           {
             id: 1,
-            label: 'BNB',
+            label: title,
             data:dataSet,
             backgroundColor: 'yellow',
           },

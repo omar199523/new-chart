@@ -10,6 +10,7 @@ const chart = ({config}) => {
         axios(config)
         .then((response)=>{
           const dexTrades = response.data.data.ethereum.dexTrades;
+          console.log(dexTrades)
           let labels =[],
               dataSet =[];
           dexTrades.forEach((filItem)=>{
@@ -23,7 +24,6 @@ const chart = ({config}) => {
         })
       
   },[])
-  console.log(tokenData)
   return (
     <div className="list" onMouseEnter={()=> {setIsShow(true)}} onMouseLeave ={()=> {setIsShow(false)}}>
         <div className='title'>
@@ -31,7 +31,7 @@ const chart = ({config}) => {
           <h2 className='tilte-address'>address</h2>
         </div>
         {isShow && <div className="chart-con">
-           <GraduationYearChart labels ={tokenData.labels} dataSet ={tokenData.dataSet}/>
+           <GraduationYearChart labels ={tokenData.labels} dataSet ={tokenData.dataSet} title={tokenData.title}/>
         </div>}
     </div>
   )
