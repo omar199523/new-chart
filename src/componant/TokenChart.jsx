@@ -17,8 +17,10 @@ class TokenChart extends React.Component {
 		const xAccessor = d => d.date;
 		const xExtents = [
 			xAccessor(last(data)),
-			xAccessor(data[data.length-1])
+			xAccessor(data[0])
 		];
+    console.log(data)
+    console.log(xExtents)
 		return (
 			<ChartCanvas height={200}
 					ratio={ratio}

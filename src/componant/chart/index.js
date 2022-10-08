@@ -17,6 +17,7 @@ const chart = ({config,key}) => {
         axios(config.config)
         .then((response)=>{
           const dexTrades = response.data.data.ethereum.dexTrades;
+
           const address = dexTrades[0].baseCurrency.address
           const result = dexTrades.map((item)=>{
             return {
