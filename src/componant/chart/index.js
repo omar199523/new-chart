@@ -1,39 +1,55 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import {useEffect, useState} from 'react'
-import GraduationYearChart from "../GraduationYearChart"
-import axios from 'axios'
+import TokenChart from "../TokenChart";
+import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 import './style.css'
-const chart = ({config}) => {
+const chart = ({config,key}) => {
     const [isShow,setIsShow] = useState(false)
+    const [isRender,setIsRender] = useState(false)
     const [tokenData,setTokenData] = useState({})
+    const [Key,setKey] = useState("") 
+    const converNumber = (num)=>{
+      const result = Number(num)
+      return (result)
+    }
     useEffect(()=>{
-        axios(config)
+        axios(config.config)
         .then((response)=>{
           const dexTrades = response.data.data.ethereum.dexTrades;
-          console.log(dexTrades)
-          let labels =[],
-              dataSet =[];
-          dexTrades.forEach((filItem)=>{
-            labels.push(new Date(filItem.timeInterval.minute).getMinutes());
-            dataSet.push(filItem.quoteAmount) 
+          const address = dexTrades[0].baseCurrency.address
+          const result = dexTrades.map((item)=>{
+            return {
+              date: new Date(item.timeInterval.minute),
+              open: +converNumber(item.open),
+              high:+converNumber(item.high),
+              low: +converNumber(item.low),
+              close: +converNumber(item.close),
+              volume: 594858493,
+            }
           })
-          setTokenData({labels,dataSet,title:dexTrades[0].baseCurrency.name})
+          setTokenData({address,data:result})
+          if(result.length < 5){
+            setIsRender(true)
+          }
         })
         .catch((error)=>{
           console.log(error);
         })
-      
+
   },[])
   return (
-    <div className="list" onMouseEnter={()=> {setIsShow(true)}} onMouseLeave ={()=> {setIsShow(false)}}>
+    <>
+    {(isRender)?( <div className="list" onMouseEnter={()=> {setIsShow(true)}} onMouseLeave ={()=> {setIsShow(false)}} key={key}>
         <div className='title'>
-          <h2 className='tilte-name'>{tokenData.title + "/ USD"}</h2>
-          <h2 className='tilte-address'>address</h2>
+          <h2 className='tilte-name'>{config.title + "/ USD"}</h2>
+          <h2 className='tilte-address'>{tokenData.address}</h2>
         </div>
         {isShow && <div className="chart-con">
-           <GraduationYearChart labels ={tokenData.labels} dataSet ={tokenData.dataSet} title={tokenData.title}/>
+           <TokenChart data = {tokenData.data} key = {tokenData.address}/>
         </div>}
-    </div>
+    </div>):null}
+  </>
   )
 }
 

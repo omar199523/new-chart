@@ -1,7 +1,5 @@
-import {useEffect, useState} from 'react'
-import {configArr } from './getData'
 
-import axios from 'axios';
+import {configArr } from './getData'
 import Chart from './componant/chart';
 import './App.css'
 function App() {
