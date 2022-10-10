@@ -1,58 +1,51 @@
 
 import axios from 'axios';
 export const adresss =[
-  // {address:"0x5650D95C33625D3bb953ffaa0a89c037AB54078d",title:"BSE"}
-  // {address:"0xCcB79DfEcedc84a34a9f30A143c0d27011b0A2cD",title:"Ingot"},
-  // {address:"0x2A1c8974755fCd0EeF4D5620a778977a59ab18D2",title:"PSE"},
-  // {address:"0x0C88CaC187e52819DbB02AEEbE50bA8922ac4770",title:"InfinityFinance"},
-  // {address:"0x82758144037e2EDfa76D583E72e1485cEBbd0A10",title:"APEGANGSTER"}
-  // {address:"0xaab55eAf4d93BEea58169cc2bc3a41DF5c217a8D",title:"JengaBlocks"},
-  // {address:"0xaF55252aE996A4C2219dA5B0AD70E37143CFC9c4",title:"RENGA"},
-  // {address:"0x81f3831f6bAE022D37e5ED3F4E99a8F7B2346c53",title:"PixelPOM"},
-  // {address:"0xe2726C708abDD358812d4e3ce68dCfbEbA435142",title:"Kasumi"},
-  // {address:"0x2a77af20165a8247543C3E801518d0B813E1f02b",title:"UNKNOWN"},
-  // {address:"0x45153B8f9d79797Ab41fd8aD170226e3EA9D9318",title:"Foudre"},
-  // {address:"0xc900A56ECF7bAa617bA2B6b6fAaE7fE6E6FF263C",title:"GENSAKU"},
-  // {address:"0x28390B1aFa57C0adce8433613c87275bBb5771eD",title:"UNKNOWN"},
-  // {address:"0x84A17A0C3B37a67A7851B2c6326F93E0fE30046b",title:"Century2052"},
-  // {address:"0x8A32572dD40B475148B2b97C7e05559dBa763e94",title:"ENFLP"},
-  // {address:"0xa001e9C2b71Ae6bb9Fb1fa7DC10E07Cf017a9FAD",title:"VladTheImpaler"},
-  // {address:"0x361630DFDE54414D30f2E11103aF4053C554F948",title:"PowerofMOON"},
-  // {address:"0xf6ce982195Ae5961B561bE43066ADFCE0169E966",title:"NoAliensSeenAnywhere"},
-  // {address:"0xcD078955CB64f1C4F4E2465A7B411617b72ef470",title:"ProofOfTAMA"},
-  // {address:"0x801B1279d61cBc14fb778eD64A84363E257FA6bc",title:"TheGrimreaper"},
-  // {address:"0x3BC8a017d38CfE09093fbfeA3D91ef3a2cfA347B",title:"KIMETSU"},
-  // {address:"0x1497047C6954DAaE96C7C9Ab032125386602A176",title:"ChokiInu"},
-  // {address:"0xb108f91A698D0A5dae851aBF1164579895af4290",title:"GoktamaInu"},
-  // {address:"0x49fF8058e8DC176cAE01c672E4B2175858C4aa45",title:"Danzayemon"},
-  // {address:"0x3B61359541c543C203C9a02A462d500C215c837d",title:"TheGoldenEgg"},
-  // {address:"0x870C3D49c21d3bA9d8A5728f0B51214e34B0FC39",title:"RoboApe"},
-  // {address:"0xE8e4Ce7Efb64e81b9133B9E4b56CE8585c23d065",title:"Kimetsu"},
-  // {address:"0xB98ED79Fc1F43c336DDf61F84d58650bacD97322",title:"Kimetsu鬼滅"},
-  // {address:"0xf4F6f42dc1467Cf618aeaB91a579158C052B5Ea8",title:"Droge"},
-  // {address:"0xb867B21FCedA57cE10867486A8e8f20555aAf507",title:"NFOtoken"},
-  // {address:"0x338fDE30df1B5A4D4e4b5c57621Ab86c3eE1533d",title:"Dazzle"},
-  // {address:"0x6AeE783743f69cEAe590324d2a38879e22eD80cd",title:"BRIANARMSTRONGCOIN"},
-  // {address:"0x611A3Cf94f385C791c867881a9d87C8EFaf199d1",title:"TheAlchemyOfSouls"},
-  // {address:"0xe990A301c6ab0b556DCE9B91446225058088B436",title:"NEXXO"},
-  // {address:"0xb0d0d6B54Db3B2b0F3Bb49965a0fE1571FF65A3c",title:"Kimetsu"},
-  // {address:"0xE58381ab765D3B45408c333D6A614014617A3c73",title:"Kimetsu"},
-  // {address:"0x1aC836D27D3896cE53e742F6BFabd5D4e54e9c7e",title:"Apeology"},
-  // {address:"0xC3a07dD57327017718dca8C6841443320A540FF4",title:"TITON"},
-  // {address:"0xa2f127D9A414DcFE82f4Ba276FA73524D43063Be",title:"TITON"},
-  // {address:"0xeDb95dE7DEb7fE3ed5Ba6767323368549D45AE58",title:"TITON"},
-  // {address:"0x7fefE36c7E727681c50E9bd025C1b603fF04428d",title:"Apeology"},
-  // {address:"0x714c3aCC751112674eb0F806e851d55DEb4bacc7",title:"SHIKAINU"},
-  // {address:"0x72d509745B8868842d97e711C410D72fc420E4CA",title:"ABabyHuntersDream"},
-  // {address:"0x294c8d59A3C932C6F4Eef5B9bCf6805b03EB49B7",title:"Elevate"},
-  // {address:"0xaD08622892253F9de012Cfe7197bA4324b492c3f",title:"AReasonForBeing"},
-  {address:"0xc0dABF7B87fB46e9b8b665676C08Fe0bEfc3115d",title:"LifesEnergy"},
-  {address:"0x777fFaA7EA9DECfCACa5C59973491300C6f5716F",title:"SHIKAINU"},
-  {address:"0xCaA5c644375C40Cc0A6a62D8818342f3809321e7",title:"FlameScape"},
-  {address:"0xfdcf0a6388e801E333519c2f03505BBe4dfF390E",title:"Bitcoin"},
-  {address:"0xc2C189fE9f80793bACf2eCbb9e2fe9fD5572F708",title:"Ryoichi"},
-  {address:"0xc8b8D5A6a68Cfe88a63Bb62d3Adfa85DBa000ac7",title:"Shibolog"}] 
+// {address:"0xC4fE18E6A4E503DFFF111E23b3feD940135DA2A9",title:"YINYANGINU"},
+// {address:"0xdbA39dDFA52A8Fdd074960e4e367223bdec22D45",title:"XEN10"},
+// {address:"0x90B21A76fDd2b7549949beBaA147274ED120EEA0",title:"SimpsofMara"},
+// {address:"0x480D2a292bC77D0922003a136e57f6FCe151E91F",title:"OXYMETATOKEN"},
+// {address:"0x02E96148BA6Bd87d09Be088487B0b643d1270290",title:"TheTenome"},
+// {address:"0x82B13F268C16bc9DeF609b05ad49eC12cF92438c",title:"Only500"},
+// {address:"0x1b4492C297F97dCF0Db51a016E77133A540087e4",title:"TheOne"},
+// {address:"0x6760B31fF80F597bf1319688a67601D910C3fB31",title:"ChadInu"},
+// {address:"0x7195df99845855D4C3F8d0B040355a3E5FE2A58A",title:"TheNextSocialExperiment"},
+// {address:"0xaDe64d54Af2bC1400F39f81067d7125CF6aFEb35",title:"UNLEASHEDDAO"},
+// {address:"0x560de0DeC03a982e59e60eD2547311fA3Ad8Aa21",title:"DieWelle"},
+// {address:"0x8dF2aD670d0F7863C414b13b28788ea02C43B0B8",title:"Oneiroi"},
+// {address:"0xfDEe6567FB212d775124dF071291B4fd9a94AAeA",title:"ProofOfPresidency"},
+// {address:"0xF6476c54b63b0075f5A7E33c13391B4843F6095b",title:"BABYXEN"},
+// {address:"0x393D2C766280a70ffbd33ABF72b5b55b80687C7c",title:"VitaliksTimeMachine"},
+// {address:"0x04a3A87c60c65abF51458398e1dFDDC9b05E1D1c",title:"Tenome"},
+// {address:"0x3c4B8f529AdbCC86D5e2f9F6022d18A2C3d302a9",title:"BABYXEN"},
+// {address:"0x40700FA6047B37B4ae7bce2382d4DeF79b3c1a35",title:"XENInu"},
+// {address:"0x04c92d4Ff54e51536b08FC544e388dcD366FA532",title:"KYO"},
+// {address:"0x50F796166B646d7cc58ff48D8E2C4cd808437f62",title:"NekotoxinNetwork"},
+// {address:"0x6AF2bd132E689f34b2fBd2607589a0C8edf371be",title:"Raster"},
+// {address:"0x53028e7f4c53eA34c15CD424600AB392b67ed22F",title:"ProofofStables"},
+// {address:"0xAa212624e86D601f1CA5F4b138668918373a7245",title:"DinoDash"},
+// {address:"0x840afA4bA7d8AA3a3219e501eE8D82f52ef56Bb6",title:"TheHills"},
+// {address:"0x1658fA6589e74d28AA7A3F25470eD6E574c67cB9",title:"InflationToken"},
+// {address:"0x097242a5CaD85F62B12830754f1062587E13C18a",title:"XENCrypto"},
+// {address:"0x77a479D1bbdcb449b3E15C9820c272314f81504a",title:"asdf"},
+// {address:"0x500D19754249b08Da601BBfeC18472Fbf1a0DC06",title:"BitcoinKaBaap"},
+// {address:"0x4299c2a17d776F7fD2c0bAf0025A135ED30cf15C",title:"SaladCat"},
+// {address:"0x8f92cDf43dea64Ff00c1e6E8Ff57f0565e339fC1",title:"BurntHairMusky"},
+// {address:"0x957e5da5cd1155a4Ef0249721F18fE25Ff3D499a",title:"BNB20"},
+// {address:"0x51eFA450d25E92680C44438e33dB429C72ac116D",title:"KitsuneMask"},
+// {address:"0x4Bf4Ae5463F4325DbCA9F231938DA13e24eBff53",title:"XENCrypto"},
+// {address:"0x5fe81137647Cab0ec5B34b19C42A70c76803D285",title:"BurntHair"},
+// {address:"0xEEb4Cd21E16Ac42aDc691952EEc24d3B089fE484",title:"夏祭り"},
+{address:"0x4B4b16e13019D6DE7D0c7dD12Ac67089B21a5f08",title:"IronManSale"},
+{address:"0xdaC2Ae92cFd3f32a557F7974BCe63734912128da",title:"PigBelly"},
+{address:"0x0e90b59e6b1f28d89a647F3224e24Af44e824BAF",title:"UshiOni"},
+{address:"0x25AD4aF27611c323E90130203db5B461E09FCd54",title:"ExtraXen"},
+{address:"0x9E669e48531b4bAaADC2b7b9EDc1bFcC59721456",title:"ProtectorsofKaguya"},
+{address:"0xDb65a6b0F7145984758D93F0D0a881699D1920C9",title:"GodofMemes"},
+{address:"0x9e73Ea0C245c6eb89e8E4D531CA6e53E543d2d48",title:"NoPainNoGain"},
+{address:"0xaA8E417Cc5c4Eb8baE3e28d2c2A90510754BD93B",title:"Generation"}] 
 export const querys = adresss.map(item=>{
+  const {query,address,title} = item;
   return {query:`{
     ethereum(network: ethereum) {
     dexTrades(
@@ -83,20 +76,50 @@ export const querys = adresss.map(item=>{
     }
     }
     }
-  `,title:item.title
+  `,title,address
 }
 })
-export const configArr = querys.map((queryItem)=>{
-  const {query,title} = queryItem
-  return {config:{
-                  method: 'post',
-                  url: 'https://graphql.bitquery.io',
-                  headers: { 
-                    'Content-Type': 'application/json', 
-                    'X-API-KEY': 'BQYh5IhPL57WRiNvTavzEpHM3RKhX6VZ'
-                  },
-                  data : {query}
-                },
-              title:title
+
+const converNumber = (num)=>{
+  const result = Number(num)
+  return (result)
+}
+
+export const configArr = ()=>{
+  
+  const allData = querys.map((queryItem)=>{
+    const {query,title,address} = queryItem
+  const data = []
+  const config =  {
+          method: 'post',
+          url: 'https://graphql.bitquery.io',
+          headers: { 
+            'Content-Type': 'application/json', 
+            'X-API-KEY': 'BQYh5IhPL57WRiNvTavzEpHM3RKhX6VZ'
+          },
+          data : {query}
           };
+  const axiosData = axios(config)
+  .then((response)=>{
+    const dexTrades = response.data.data.ethereum.dexTrades;
+    return dexTrades
+      
+  }).then((response)=>{
+      const data = response.map((dexItem)=>{
+          return [`${new Date(dexItem.timeInterval.minute).getHours()}:${new Date(dexItem.timeInterval.minute).getMinutes()}`,
+          converNumber(dexItem.open),
+          converNumber(dexItem.low),
+          converNumber(dexItem.high),
+          converNumber(dexItem.close)]
+        })
+      return data
+  })
+  .catch((error)=>{
+    // console.log(error);
+  })
+  return {title,address,axiosData}
 })
+return allData
+}
+
+

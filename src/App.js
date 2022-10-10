@@ -1,8 +1,14 @@
 
-import {configArr } from './getData'
-import Chart from './componant/chart';
+import {useEffect, useState} from 'react'
+import ChartContiner from './componant/ChartContiner'
+import {configArr} from "./getData"
 import './App.css'
 function App() {
+  const [tokenDatas,setTokenDatas] = useState([])
+  useEffect(() => {
+    setTokenDatas(configArr())
+    // setTokenData(configArr())
+  }, [])
 
   return(
     <div className="App">
@@ -11,8 +17,9 @@ function App() {
           <h2 className='tilte-name'>name/symdol</h2>
           <h2 className='tilte-address'>Address</h2>
         </div>
-        {configArr.map(config=><Chart config={config}/> )}
+        {tokenDatas.map(tokenData=><ChartContiner tokenData={tokenData}/> )}
       </div>
+
     </div>
   );
 }
