@@ -1,5 +1,6 @@
 
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 export const adresss =[
 // {address:"0xC4fE18E6A4E503DFFF111E23b3feD940135DA2A9",title:"YINYANGINU"},
 // {address:"0xdbA39dDFA52A8Fdd074960e4e367223bdec22D45",title:"XEN10"},
@@ -29,13 +30,13 @@ export const adresss =[
 // {address:"0x097242a5CaD85F62B12830754f1062587E13C18a",title:"XENCrypto"},
 // {address:"0x77a479D1bbdcb449b3E15C9820c272314f81504a",title:"asdf"},
 // {address:"0x500D19754249b08Da601BBfeC18472Fbf1a0DC06",title:"BitcoinKaBaap"},
-// {address:"0x4299c2a17d776F7fD2c0bAf0025A135ED30cf15C",title:"SaladCat"},
-// {address:"0x8f92cDf43dea64Ff00c1e6E8Ff57f0565e339fC1",title:"BurntHairMusky"},
-// {address:"0x957e5da5cd1155a4Ef0249721F18fE25Ff3D499a",title:"BNB20"},
-// {address:"0x51eFA450d25E92680C44438e33dB429C72ac116D",title:"KitsuneMask"},
-// {address:"0x4Bf4Ae5463F4325DbCA9F231938DA13e24eBff53",title:"XENCrypto"},
-// {address:"0x5fe81137647Cab0ec5B34b19C42A70c76803D285",title:"BurntHair"},
-// {address:"0xEEb4Cd21E16Ac42aDc691952EEc24d3B089fE484",title:"夏祭り"},
+{address:"0x4299c2a17d776F7fD2c0bAf0025A135ED30cf15C",title:"SaladCat"},
+{address:"0x8f92cDf43dea64Ff00c1e6E8Ff57f0565e339fC1",title:"BurntHairMusky"},
+{address:"0x957e5da5cd1155a4Ef0249721F18fE25Ff3D499a",title:"BNB20"},
+{address:"0x51eFA450d25E92680C44438e33dB429C72ac116D",title:"KitsuneMask"},
+{address:"0x4Bf4Ae5463F4325DbCA9F231938DA13e24eBff53",title:"XENCrypto"},
+{address:"0x5fe81137647Cab0ec5B34b19C42A70c76803D285",title:"BurntHair"},
+{address:"0xEEb4Cd21E16Ac42aDc691952EEc24d3B089fE484",title:"夏祭り"},
 {address:"0x4B4b16e13019D6DE7D0c7dD12Ac67089B21a5f08",title:"IronManSale"},
 {address:"0xdaC2Ae92cFd3f32a557F7974BCe63734912128da",title:"PigBelly"},
 {address:"0x0e90b59e6b1f28d89a647F3224e24Af44e824BAF",title:"UshiOni"},
@@ -45,7 +46,7 @@ export const adresss =[
 {address:"0x9e73Ea0C245c6eb89e8E4D531CA6e53E543d2d48",title:"NoPainNoGain"},
 {address:"0xaA8E417Cc5c4Eb8baE3e28d2c2A90510754BD93B",title:"Generation"}] 
 export const querys = adresss.map(item=>{
-  const {query,address,title} = item;
+  const {address,title} = item;
   return {query:`{
     ethereum(network: ethereum) {
     dexTrades(
@@ -88,8 +89,7 @@ const converNumber = (num)=>{
 export const configArr = ()=>{
   
   const allData = querys.map((queryItem)=>{
-    const {query,title,address} = queryItem
-  const data = []
+  const {query,title,address} = queryItem
   const config =  {
           method: 'post',
           url: 'https://graphql.bitquery.io',
@@ -107,17 +107,18 @@ export const configArr = ()=>{
   }).then((response)=>{
       const data = response.map((dexItem)=>{
           return [`${new Date(dexItem.timeInterval.minute).getHours()}:${new Date(dexItem.timeInterval.minute).getMinutes()}`,
-          converNumber(dexItem.open),
           converNumber(dexItem.low),
-          converNumber(dexItem.high),
-          converNumber(dexItem.close)]
+          converNumber(dexItem.open),
+          converNumber(dexItem.close),
+          converNumber(dexItem.high)
+          ]
         })
       return data
   })
   .catch((error)=>{
     // console.log(error);
   })
-  return {title,address,axiosData}
+  return {title,address,axiosData,key:uuidv4()}
 })
 return allData
 }

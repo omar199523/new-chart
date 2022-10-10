@@ -11,7 +11,8 @@
     max-height: 250px;
     padding: 10px;
     border-radius: 20px;
-    background-color: #ddd;
+    border: 1.4px solid #eab308;
+        background-color: #1f2937;
 }
 
 .chart-con:before {
@@ -23,6 +24,6 @@
     height: 0;
     transform: rotate(58deg);
     border-top: 20px solid transparent;
-    border-right: 10px solid #ddd;
+    border-right: 10px solid #1f2937;
     border-bottom: 21px solid transparent;
 }
