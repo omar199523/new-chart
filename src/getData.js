@@ -107,10 +107,10 @@ export const configArr = ()=>{
   }).then((response)=>{
       const data = response.map((dexItem)=>{
           return [`${new Date(dexItem.timeInterval.minute).getHours()}:${new Date(dexItem.timeInterval.minute).getMinutes()}`,
-          converNumber(dexItem.low),
+          converNumber(dexItem.open),
           converNumber(dexItem.open),
           converNumber(dexItem.close),
-          converNumber(dexItem.high)
+          converNumber(dexItem.close)
           ]
         })
       return data

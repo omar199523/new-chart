@@ -12,9 +12,12 @@ const GoogleChart =({chartData})=> {
                 options={{
                   legend: 'none',
                   backgroundColor:'#1e293b',
+                  bar: {groupWidth: '100%'},
+                  hAxis:{textStyle:{color:"white"}},
+                  vAxis:{textStyle:{color:"white"}},
                   candlestick: {
-                    fallingColor: { strokeWidth: 0, fill: '#EC3138' }, // red
-                    risingColor: { strokeWidth: 0, fill: '#01A85B' }   // green
+                    fallingColor: { strokeWidth: 0,  fill: '#EC3138' }, // red
+                    risingColor: { strokeWidth: 0, fill: '#01A85B' },  // green
                   }
                   }}
                 rootProps={{ 'data-testid': '1' }}
