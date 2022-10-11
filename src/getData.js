@@ -108,36 +108,32 @@ export const querys = adresssOne.map(item=>{
   return {query:`{
     ethereum(network: bsc) {
       dexTrades(
-        options: {asc: "timeInterval.minute" ,limit: 30}
-        exchangeName: {in: ["Pancake", "Pancake v2"]}
-        time: {since: "2022-08-22T00:00:00"}
-        baseCurrency: {is: "0x2eE5a73e55A2485627D01f49067709D47512e9A9"}
-        quoteCurrency: {in: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c"}
-        ) {
-      timeInterval {
-      minute(count: 1)
+        options: {asc: "timeInterval.minute", limit: 100}
+        baseCurrency: {is: "${item.address}"}
+        quoteCurrency:{in:"0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c"}
+      ) {
+        timeInterval {
+          minute(count: 1)
+        }
+        high: quotePrice(calculate: maximum)
+        low: quotePrice(calculate: minimum)
+        open: minimum(of: block, get: quote_price)
+        close: maximum(of: block, get: quote_price)
+        quoteAmount(in: USD)
+        baseCurrency {
+          name
+          address
+        }
+        quoteCurrency {
+          name
+          address
+        }
+        exchange {
+          fullName
+        }
       }
-      high: quotePrice(calculate: maximum)
-      low: quotePrice(calculate: minimum)
-      open: minimum(of: block, get: quote_price)
-      close: maximum(of: block, get: quote_price)
-      quoteAmount(in: USD)
-      baseCurrency {
-      name
-      address
-      }
-      quoteCurrency {
-      name
-      address
-      }
-      exchange {
-      fullName
-      }
-      }
-      }
-  }
-  
-    
+    }
+  }   
   `,title,address
 }
 })
