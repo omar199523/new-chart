@@ -2,34 +2,34 @@
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 export const adresss =[
-// {address:"0xC4fE18E6A4E503DFFF111E23b3feD940135DA2A9",title:"YINYANGINU"},
-// {address:"0xdbA39dDFA52A8Fdd074960e4e367223bdec22D45",title:"XEN10"},
-// {address:"0x90B21A76fDd2b7549949beBaA147274ED120EEA0",title:"SimpsofMara"},
-// {address:"0x480D2a292bC77D0922003a136e57f6FCe151E91F",title:"OXYMETATOKEN"},
-// {address:"0x02E96148BA6Bd87d09Be088487B0b643d1270290",title:"TheTenome"},
-// {address:"0x82B13F268C16bc9DeF609b05ad49eC12cF92438c",title:"Only500"},
-// {address:"0x1b4492C297F97dCF0Db51a016E77133A540087e4",title:"TheOne"},
-// {address:"0x6760B31fF80F597bf1319688a67601D910C3fB31",title:"ChadInu"},
-// {address:"0x7195df99845855D4C3F8d0B040355a3E5FE2A58A",title:"TheNextSocialExperiment"},
-// {address:"0xaDe64d54Af2bC1400F39f81067d7125CF6aFEb35",title:"UNLEASHEDDAO"},
-// {address:"0x560de0DeC03a982e59e60eD2547311fA3Ad8Aa21",title:"DieWelle"},
-// {address:"0x8dF2aD670d0F7863C414b13b28788ea02C43B0B8",title:"Oneiroi"},
-// {address:"0xfDEe6567FB212d775124dF071291B4fd9a94AAeA",title:"ProofOfPresidency"},
-// {address:"0xF6476c54b63b0075f5A7E33c13391B4843F6095b",title:"BABYXEN"},
-// {address:"0x393D2C766280a70ffbd33ABF72b5b55b80687C7c",title:"VitaliksTimeMachine"},
-// {address:"0x04a3A87c60c65abF51458398e1dFDDC9b05E1D1c",title:"Tenome"},
-// {address:"0x3c4B8f529AdbCC86D5e2f9F6022d18A2C3d302a9",title:"BABYXEN"},
-// {address:"0x40700FA6047B37B4ae7bce2382d4DeF79b3c1a35",title:"XENInu"},
-// {address:"0x04c92d4Ff54e51536b08FC544e388dcD366FA532",title:"KYO"},
-// {address:"0x50F796166B646d7cc58ff48D8E2C4cd808437f62",title:"NekotoxinNetwork"},
-// {address:"0x6AF2bd132E689f34b2fBd2607589a0C8edf371be",title:"Raster"},
-// {address:"0x53028e7f4c53eA34c15CD424600AB392b67ed22F",title:"ProofofStables"},
-// {address:"0xAa212624e86D601f1CA5F4b138668918373a7245",title:"DinoDash"},
-// {address:"0x840afA4bA7d8AA3a3219e501eE8D82f52ef56Bb6",title:"TheHills"},
-// {address:"0x1658fA6589e74d28AA7A3F25470eD6E574c67cB9",title:"InflationToken"},
-// {address:"0x097242a5CaD85F62B12830754f1062587E13C18a",title:"XENCrypto"},
-// {address:"0x77a479D1bbdcb449b3E15C9820c272314f81504a",title:"asdf"},
-// {address:"0x500D19754249b08Da601BBfeC18472Fbf1a0DC06",title:"BitcoinKaBaap"},
+{address:"0xC4fE18E6A4E503DFFF111E23b3feD940135DA2A9",title:"YINYANGINU"},
+{address:"0xdbA39dDFA52A8Fdd074960e4e367223bdec22D45",title:"XEN10"},
+{address:"0x90B21A76fDd2b7549949beBaA147274ED120EEA0",title:"SimpsofMara"},
+{address:"0x480D2a292bC77D0922003a136e57f6FCe151E91F",title:"OXYMETATOKEN"},
+{address:"0x02E96148BA6Bd87d09Be088487B0b643d1270290",title:"TheTenome"},
+{address:"0x82B13F268C16bc9DeF609b05ad49eC12cF92438c",title:"Only500"},
+{address:"0x1b4492C297F97dCF0Db51a016E77133A540087e4",title:"TheOne"},
+{address:"0x6760B31fF80F597bf1319688a67601D910C3fB31",title:"ChadInu"},
+{address:"0x7195df99845855D4C3F8d0B040355a3E5FE2A58A",title:"TheNextSocialExperiment"},
+{address:"0xaDe64d54Af2bC1400F39f81067d7125CF6aFEb35",title:"UNLEASHEDDAO"},
+{address:"0x560de0DeC03a982e59e60eD2547311fA3Ad8Aa21",title:"DieWelle"},
+{address:"0x8dF2aD670d0F7863C414b13b28788ea02C43B0B8",title:"Oneiroi"},
+{address:"0xfDEe6567FB212d775124dF071291B4fd9a94AAeA",title:"ProofOfPresidency"},
+{address:"0xF6476c54b63b0075f5A7E33c13391B4843F6095b",title:"BABYXEN"},
+{address:"0x393D2C766280a70ffbd33ABF72b5b55b80687C7c",title:"VitaliksTimeMachine"},
+{address:"0x04a3A87c60c65abF51458398e1dFDDC9b05E1D1c",title:"Tenome"},
+{address:"0x3c4B8f529AdbCC86D5e2f9F6022d18A2C3d302a9",title:"BABYXEN"},
+{address:"0x40700FA6047B37B4ae7bce2382d4DeF79b3c1a35",title:"XENInu"},
+{address:"0x04c92d4Ff54e51536b08FC544e388dcD366FA532",title:"KYO"},
+{address:"0x50F796166B646d7cc58ff48D8E2C4cd808437f62",title:"NekotoxinNetwork"},
+{address:"0x6AF2bd132E689f34b2fBd2607589a0C8edf371be",title:"Raster"},
+{address:"0x53028e7f4c53eA34c15CD424600AB392b67ed22F",title:"ProofofStables"},
+{address:"0xAa212624e86D601f1CA5F4b138668918373a7245",title:"DinoDash"},
+{address:"0x840afA4bA7d8AA3a3219e501eE8D82f52ef56Bb6",title:"TheHills"},
+{address:"0x1658fA6589e74d28AA7A3F25470eD6E574c67cB9",title:"InflationToken"},
+{address:"0x097242a5CaD85F62B12830754f1062587E13C18a",title:"XENCrypto"},
+{address:"0x77a479D1bbdcb449b3E15C9820c272314f81504a",title:"asdf"},
+{address:"0x500D19754249b08Da601BBfeC18472Fbf1a0DC06",title:"BitcoinKaBaap"},
 {address:"0x4299c2a17d776F7fD2c0bAf0025A135ED30cf15C",title:"SaladCat"},
 {address:"0x8f92cDf43dea64Ff00c1e6E8Ff57f0565e339fC1",title:"BurntHairMusky"},
 {address:"0x957e5da5cd1155a4Ef0249721F18fE25Ff3D499a",title:"BNB20"},
@@ -99,26 +99,8 @@ export const configArr = ()=>{
           },
           data : {query}
           };
-  const axiosData = axios(config)
-  .then((response)=>{
-    const dexTrades = response.data.data.ethereum.dexTrades;
-    return dexTrades
-      
-  }).then((response)=>{
-      const data = response.map((dexItem)=>{
-          return [`${new Date(dexItem.timeInterval.minute).getHours()}:${new Date(dexItem.timeInterval.minute).getMinutes()}`,
-          converNumber(dexItem.open),
-          converNumber(dexItem.open),
-          converNumber(dexItem.close),
-          converNumber(dexItem.close)
-          ]
-        })
-      return data
-  })
-  .catch((error)=>{
-    // console.log(error);
-  })
-  return {title,address,axiosData,key:uuidv4()}
+  
+  return {title,address,config,key:uuidv4()}
 })
 return allData
 }

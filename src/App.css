@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .App {
   min-height: 100vh;
     display: flex;
@@ -11,7 +12,7 @@
     background-color: rgb(21, 21, 21);
 }
 .token-list {
-  margin: 150px auto 0px;
+  margin: 200px auto 0px;
   min-width: 900px;
   border: 1.2px solid #ddd;
 }

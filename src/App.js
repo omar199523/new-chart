@@ -7,9 +7,8 @@ function App() {
   const [tokenDatas,setTokenDatas] = useState([])
   useEffect(() => {
     setTokenDatas(configArr())
-    // setTokenData(configArr())
   }, [])
-
+  console.log(tokenDatas)
   return(
     <div className="App">
       <div className='token-list'>
@@ -17,7 +16,7 @@ function App() {
           <h2 className='tilte-name'>name/symdol</h2>
           <h2 className='tilte-address'>Address</h2>
         </div>
-        {tokenDatas.map(tokenData=><ChartContiner tokenData={tokenData}/> )}
+        {tokenDatas.map(tokenData=><ChartContiner tokenData={tokenData} key={tokenData.key}/> )}
       </div>
 
     </div>
