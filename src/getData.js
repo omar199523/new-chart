@@ -109,8 +109,10 @@ export const querys = adresssOne.map(item=>{
     ethereum(network: bsc) {
       dexTrades(
         options: {asc: "timeInterval.minute" ,limit: 30}
+        exchangeName: {in: ["Pancake", "Pancake v2"]}
+        time: {since: "2022-08-22T00:00:00"}
         baseCurrency: {is: "0x2eE5a73e55A2485627D01f49067709D47512e9A9"}
-        date: {after: "2021-04-28"}
+        quoteCurrency: {in: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c"}
         ) {
       timeInterval {
       minute(count: 1)
@@ -126,6 +128,7 @@ export const querys = adresssOne.map(item=>{
       }
       quoteCurrency {
       name
+      address
       }
       exchange {
       fullName

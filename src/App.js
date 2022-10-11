@@ -8,7 +8,6 @@ function App() {
   useEffect(() => {
     setTokenDatas(configArr())
   }, [])
-  console.log(tokenDatas)
   return(
     <div className="App">
       <div className='token-list'>

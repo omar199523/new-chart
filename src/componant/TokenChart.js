@@ -15,11 +15,8 @@ const GoogleChart =({config})=> {
     axios(config)
       .then((response)=>{
         const dexTrades = response.data.data.ethereum.dexTrades;
-        console.log(response)
-        return dexTrades
-          
-      }).then((response)=>{
-          const data = response.map((dexItem)=>{
+        console.log(dexTrades)
+          const data = dexTrades.map((dexItem)=>{
               return [`${new Date(dexItem.timeInterval.minute).getHours()}:${new Date(dexItem.timeInterval.minute).getMinutes()}`,
               converNumber(dexItem.open),
               converNumber(dexItem.open),
