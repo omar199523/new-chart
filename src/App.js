@@ -1,7 +1,7 @@
 
 import {useEffect, useState} from 'react'
 import ChartContiner from './componant/ChartContiner'
-import {configArr} from "./getData"
+import {configArr,alldata} from "./getData"
 import './App.css'
 function App() {
   const [tokenDatas,setTokenDatas] = useState([])

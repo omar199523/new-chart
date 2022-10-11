@@ -45,46 +45,100 @@ export const adresss =[
 {address:"0xDb65a6b0F7145984758D93F0D0a881699D1920C9",title:"GodofMemes"},
 {address:"0x9e73Ea0C245c6eb89e8E4D531CA6e53E543d2d48",title:"NoPainNoGain"},
 {address:"0xaA8E417Cc5c4Eb8baE3e28d2c2A90510754BD93B",title:"Generation"}] 
-export const querys = adresss.map(item=>{
+// export const querys = adresss.map(item=>{
+//   const {address,title} = item;
+//   return {query:`{
+//     ethereum(network: ethereum) {
+//     dexTrades(
+//     options: {asc: "timeInterval.minute" ,limit: 30}
+//     quoteCurrency: {in: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"}
+//     baseCurrency: {is:"${item.address}"}
+                        
+//     date: {after: "2021-04-28"}
+//     ) {
+//     timeInterval {
+//     minute(count: 1)
+//     }
+//     high: quotePrice(calculate: maximum)
+//     low: quotePrice(calculate: minimum)
+//     open: minimum(of: block, get: quote_price)
+//     close: maximum(of: block, get: quote_price)
+//     quoteAmount(in: USD)
+//     baseCurrency {
+//     name
+//     address
+//     }
+//     quoteCurrency {
+//     name
+//     }
+//     exchange {
+//     fullName
+//     }
+//     }
+//     }
+//     }
+//   `,title,address
+// }
+// })
+const adresssOne =[
+{address:"0x164AEfd334D42206eEDAE43E5e9D5bc9F9b88771",title: "TABI"},
+{address:"0x65752Ad72b330cd09B1Bd52Fa82CC38a04B68757",title: "ARABIANAPEGROW"},
+{address:"0x864cD6460eB4bd8B83EdEaac01174fC5Ca092b64",title: "MOTIGAZILLA"},
+{address:"0xd57aD7Dae1a12E4ef043c492aC8404F756B96a40",title: "SportFanToken"},
+{address:"0xBdc69f2c4398c6d751824bac4E5083E1BF1E9e03",title: "CCVG"},
+{address:"0x2AD489186488694ae259F868aB1Fa895e212Bd7f",title: "SMXToken"},
+{address:"0xaa266cD78f34cEa694BAa4Cc8850773a0b5fd196",title: "TokenL"},
+{address:"0x027a9d301FB747cd972CFB29A63f3BDA551DFc5c",title: "mWOM"},
+{address:"0x020ca56F36f4c843593C4CD4CD5CA3b630c1ce38",title: "PaulWalkerFan"},
+{address:"0xeFa1b69DD606224a1fe26A6c083A08C0dDe8ece9",title: "Halloqueen"},
+{address:"0x068BeB67121B9fCcc6DD254F9bd6aFf680cF3b9f",title: "GenjiInu"},
+{address:"0x4f9bAfC7c280841e3bB8443D7CD082f1741FF6f4",title: "BUXCOIN"},
+{address:"0x25bCdFF4E25BDeCF04462430eEa02d3f0Ad6080c",title: "Test"},
+{address:"0xC98E82e5d8963631bfF9A7b61F39a881AEEf9cC7",title: "babyinukobsc"},
+{address:"0x0d34f4c3419dbEaBaB49dF3E9A2999F4931847E7",title: "TAMAINU"},
+{address:"0x2eE5a73e55A2485627D01f49067709D47512e9A9",title: "SUPERSHIBAGROW"},
+{address:"0x1A496A51220e712F6C4EDf94285A544Cd89cBE13",title: "VARGOXToken"},
+{address:"0x685082FE6443070eBCd442fF3d4eD9E43a8701AD",title: "BabyRustix"},
+{address:"0x4f27b14c29CA9F146D98405B6Ba6d6D6C32f944f",title: "Aderax"},
+{address:"0xF8d5470ddA02fF14AeddFeF4C0E950c7F4296Dde",title: "XENLAEEB"},
+]
+
+export const querys = adresssOne.map(item=>{
   const {address,title} = item;
   return {query:`{
-    ethereum(network: ethereum) {
-    dexTrades(
-    options: {asc: "timeInterval.minute" ,limit: 30}
-    quoteCurrency: {in: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"}
-    baseCurrency: {is:"${item.address}"}
-                        
-    date: {after: "2021-04-28"}
-    ) {
-    timeInterval {
-    minute(count: 1)
-    }
-    high: quotePrice(calculate: maximum)
-    low: quotePrice(calculate: minimum)
-    open: minimum(of: block, get: quote_price)
-    close: maximum(of: block, get: quote_price)
-    quoteAmount(in: USD)
-    baseCurrency {
-    name
-    address
-    }
-    quoteCurrency {
-    name
-    }
-    exchange {
-    fullName
-    }
-    }
-    }
-    }
+    ethereum(network: bsc) {
+      dexTrades(
+        options: {asc: "timeInterval.minute" ,limit: 30}
+        baseCurrency: {is: "0x2eE5a73e55A2485627D01f49067709D47512e9A9"}
+        date: {after: "2021-04-28"}
+        ) {
+      timeInterval {
+      minute(count: 1)
+      }
+      high: quotePrice(calculate: maximum)
+      low: quotePrice(calculate: minimum)
+      open: minimum(of: block, get: quote_price)
+      close: maximum(of: block, get: quote_price)
+      quoteAmount(in: USD)
+      baseCurrency {
+      name
+      address
+      }
+      quoteCurrency {
+      name
+      }
+      exchange {
+      fullName
+      }
+      }
+      }
+  }
+  
+    
   `,title,address
 }
 })
 
-const converNumber = (num)=>{
-  const result = Number(num)
-  return (result)
-}
 
 export const configArr = ()=>{
   
@@ -104,5 +158,6 @@ export const configArr = ()=>{
 })
 return allData
 }
+
 
 
